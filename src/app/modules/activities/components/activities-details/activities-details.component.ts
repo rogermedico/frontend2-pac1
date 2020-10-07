@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Activity } from 'src/app/shared/models/activity.model';
 import { User } from 'src/app/shared/models/user.model';
 import { ActivitiesService } from 'src/app/shared/services/activities.service';
@@ -18,15 +19,17 @@ export class ActivitiesDetailsComponent implements OnInit {
   public favorite: boolean;
   public status: String;
 
-  constructor(private us: UserService, private as: ActivitiesService, private favService: ActivitiesFavoritesService) { }
+  constructor(private us: UserService, private as: ActivitiesService, private favService: ActivitiesFavoritesService, private router: Router) { }
 
   ngOnInit(): void {
     this.user = this.us.userLoggedIn;
     this.as.activityToShowRefreshed().subscribe(
       () => {
         this.activity = this.as.activityToShow;
-        this.favorite = this.favService.isFavorite(this.activity);
-        this.checkStatus();
+        if (this.activity) {
+          this.favorite = this.favService.isFavorite(this.activity);
+          this.checkStatus();
+        }
       }
     )
   }
@@ -46,7 +49,7 @@ export class ActivitiesDetailsComponent implements OnInit {
   }
 
   toggleFavorite() {
-    this.favorite = this.favService.toggleFavorite(this.activity);
+    this.favorite = this.favService.toggleFavorite(this.activity, this.router.url);
   }
 
   signUp() {

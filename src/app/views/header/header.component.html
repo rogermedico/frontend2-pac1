@@ -18,6 +18,12 @@
         <span class="menu-item" *ngIf="userLoggedIn !== undefined && userLoggedIn.type == 'company'">
             <a routerLink="/activities/admin" routerLinkActive="active">Admin</a>
         </span>
+        <span class="menu-item" *ngIf="userLoggedIn !== undefined && userLoggedIn.type == 'tourist'">
+            <a routerLink="/favorites" routerLinkActive="active">Favorites</a>
+        </span>
+        <span class="menu-item" *ngIf="userLoggedIn !== undefined && userLoggedIn.type == 'tourist'">
+            <a routerLink="/myactivities" routerLinkActive="active">My activities</a>
+        </span>
         <span class="menu-item" *ngIf="userLoggedIn !== undefined">
             <a routerLink="/user/profile" routerLinkActive="active">Profile</a>
         </span>

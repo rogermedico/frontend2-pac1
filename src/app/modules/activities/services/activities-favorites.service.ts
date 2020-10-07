@@ -1,13 +1,15 @@
 import { Injectable } from "@angular/core";
 import { UserService } from 'src/app/shared/services/user.service';
 import { Activity } from 'src/app/shared/models/activity.model';
+import { Observable, Subject } from 'rxjs';
+import { ActivitiesService } from 'src/app/shared/services/activities.service';
 
 @Injectable({
   providedIn: "root",
 })
 export class ActivitiesFavoritesService {
 
-  constructor(private us: UserService) { }
+  constructor(private us: UserService, private as: ActivitiesService) { }
 
   isFavorite(ac: Activity): null | boolean {
     if (!this.us.userLoggedIn) {
@@ -29,7 +31,7 @@ export class ActivitiesFavoritesService {
     }
   }
 
-  toggleFavorite(ac: Activity): boolean {
+  toggleFavorite(ac: Activity, route: String): boolean {
     const storedFavs: number[] = JSON.parse(localStorage.getItem(this.us.userLoggedIn.email));
 
     if (storedFavs == null) {
@@ -51,5 +53,6 @@ export class ActivitiesFavoritesService {
 
     }
   }
+
 
 }

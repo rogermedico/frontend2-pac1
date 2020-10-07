@@ -5,6 +5,7 @@ import { catchError, map, tap } from "rxjs/operators";
 import { User } from '../models/user.model';
 import { API } from '../constants/api.constant';
 import { Activity } from '../models/activity.model';
+import { UserService } from './user.service';
 
 @Injectable({
   providedIn: "root",
