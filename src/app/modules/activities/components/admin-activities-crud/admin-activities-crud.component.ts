@@ -108,7 +108,7 @@ export class AdminActivitiesCrudComponent implements OnInit {
       maxCapacity: this.maxCapacity.value,
       state: this.state.value,
       owner: this.userLoggedIn.id,
-      participatingUsers: []
+      participatingUsers: this.state.value != 'Cancelled' ? this.activity.participatingUsers : []
     };
 
     if (this.activityIndex != null) {
@@ -119,7 +119,10 @@ export class AdminActivitiesCrudComponent implements OnInit {
     }
     else {
       this.as.createActivity(activity).subscribe(
-        () => console.log(`Created new activity from user ${this.userLoggedIn.email}`)
+        () => {
+          this.as.getActivities().subscribe();
+          console.log(`Created new activity from user ${this.userLoggedIn.email}`);
+        }
       );
     }
 

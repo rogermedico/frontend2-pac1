@@ -20,8 +20,9 @@ export class AdminActivitiesComponent implements OnInit {
 
   ngOnInit(): void {
     this.userLoggedIn = this.us.userLoggedIn;
-    this.as.getActivitiesByOwner(this.userLoggedIn.id).subscribe(
-      (a) => this.activities = a
+    this.activities = this.as.activities.filter(ac => ac.owner === this.userLoggedIn.id);
+    this.as.activitiesRefreshed().subscribe(
+      () => this.activities = this.as.activities.filter(ac => ac.owner === this.userLoggedIn.id)
     );
   }
 
@@ -35,9 +36,12 @@ export class AdminActivitiesComponent implements OnInit {
 
   deleteActivity(i: number) {
     if (confirm('You are about to delete an activity record. Are you sure?')) {
-      this.activities.splice(i, 1);
+      const localIndex = this.activities.findIndex(ac => ac.id === i);
+      this.activities.splice(localIndex, 1);
+      console.log('activity id: ', i, 'local index: ', localIndex);
+      console.log('local activities', this.activities);
       this.as.deleteActivity(i).subscribe(
-        () => console.log(`Activiry ${i} deleted`)
+        () => console.log(`Activity ${i} deleted`)
       );
     }
   }

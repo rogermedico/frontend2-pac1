@@ -39,10 +39,7 @@ export class ActivitiesService {
   }
 
   createActivity(a: Activity): Observable<any> {
-    this.activitiesVar.push(a);
-    return this.http.post(API.activities, a, this.httpOptions).pipe(
-      tap(() => this.activitiesRefreshed$.next())
-    );
+    return this.http.post(API.activities, a, this.httpOptions);
   }
 
   updateActivity(a: Activity): Observable<any> {
@@ -53,7 +50,8 @@ export class ActivitiesService {
   }
 
   deleteActivity(i: number): Observable<any> {
-    this.activitiesVar.splice(i, 1);
+    const localIndex = this.activitiesVar.findIndex(ac => ac.id === i);
+    this.activitiesVar.splice(localIndex, 1);
     return this.http.delete(`${API.activities}/${i}`).pipe(
       tap(() => this.activitiesRefreshed$.next())
     );
