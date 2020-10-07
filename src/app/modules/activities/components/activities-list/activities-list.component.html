@@ -20,7 +20,11 @@
             <span class="activity-item">{{ac.date}}</span>
             <span class="activity-item">{{ac.price}}</span>
             <span class="activity-item">
-                <a class="show-details-link" [routerLink]="" (click)="showDetails(ac)">Details</a>
+                <a class="show-details-link" [routerLink]="" (click)="showDetails(ac)">
+                    <span class="material-icons md-36 details">
+                        description
+                    </span>
+                </a>
             </span>
         </div>
     </div>

@@ -16,6 +16,7 @@ export class ActivitiesDetailsComponent implements OnInit {
   public activity: Activity;
   public user: User;
   public favorite: boolean;
+  public status: String;
 
   constructor(private us: UserService, private as: ActivitiesService, private favService: ActivitiesFavoritesService) { }
 
@@ -33,11 +34,14 @@ export class ActivitiesDetailsComponent implements OnInit {
   checkStatus() {
     if (this.activity.state != 'Cancelled') {
       if (this.activity.maxCapacity - this.activity.participatingUsers.length <= 0) {
-        this.activity.state = 'Complete';
+        this.status = 'Complete';
       }
       else {
-        this.activity.state = 'Available';
+        this.status = 'Available';
       }
+    }
+    else {
+      this.status = 'Cancelled';
     }
   }
 

@@ -20,8 +20,16 @@
             <span class="education-item">{{education.university}}</span>
             <span class="education-item">{{education.finishDate}}</span>
             <span class="education-item">
-                <a class="update-education-link" [routerLink]="" (click)="updateEducation(i,education)">Update</a>
-                <a class="delete-education-link" [routerLink]="" (click)="deleteEducation(i)">Delete</a>
+                <a class="update-education-link" [routerLink]="" (click)="updateEducation(i,education)">
+                    <span class="material-icons edit">
+                        edit
+                    </span>
+                </a>
+                <a class="delete-education-link" [routerLink]="" (click)="deleteEducation(i)">
+                    <span class="material-icons delete">
+                        delete
+                    </span>
+                </a>
             </span>
         </div>
 

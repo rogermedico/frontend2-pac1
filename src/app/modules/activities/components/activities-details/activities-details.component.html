@@ -53,7 +53,7 @@
         </div>
         <div class="activity-row" *ngIf="activity.state">
             <span class="activity-tooltip">STATUS:</span>
-            <span class="activity-item">{{activity.state}}</span>
+            <span class="activity-item">{{status}}</span>
         </div>
         <div *ngIf="user && user.type !== 'company'" class="sign-up-button-container">
             <button *ngIf="!activity.participatingUsers.includes(user.id)" class="submit-button" type="submit"

@@ -16,8 +16,16 @@
             <span class="language-item">{{language.level}}</span>
             <span class="language-item">{{language.finishDate}}</span>
             <span class="language-item">
-                <a class="update-language-link" [routerLink]="" (click)="updateLanguage(i,language)">Update</a>
-                <a class="delete-language-link" [routerLink]="" (click)="deleteLanguage(i)">Delete</a>
+                <a class="update-language-link" [routerLink]="" (click)="updateLanguage(i,language)">
+                    <span class="material-icons edit">
+                        edit
+                    </span>
+                </a>
+                <a class="delete-language-link" [routerLink]="" (click)="deleteLanguage(i)">
+                    <span class="material-icons delete">
+                        delete
+                    </span>
+                </a>
             </span>
         </div>
 

@@ -1,3 +1,5 @@
+@import '~material-design-icons/iconfont/material-icons.css';
+
 .section-title {
     font-size: 1.1rem;
     text-align: left;
@@ -30,23 +32,28 @@
     text-align: left;
     padding-left: 15px;
     font-size: 0.9rem;
+    vertical-align:middle;
 }
 
 .education-item:last-child {
     text-align: center;
+    padding-left: 0;
+}
+
+.edit,
+.delete {
+    color: rgb(0,0,0);
+}
+
+.edit:hover,
+.delete:hover {
+    color: rgba(2, 15, 20, 0.5);
 }
 
 .update-education-link,
 .delete-education-link {
-    font-weight: 700;
-    color: rgb(2, 15, 20);
     text-decoration: none;
-    margin: 0 15px;
-}
-    
-.update-education-link:hover,
-.delete-education-link:hover {
-    color: rgba(2, 15, 20, 0.5);
+    margin: 0 5px;
 }
 
 .education-new-button {

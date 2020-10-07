@@ -32,8 +32,16 @@
             <span class="activity-item">{{ac.maxCapacity}}</span>
             <span class="activity-item">{{ac.state}}</span>
             <span class="activity-item">
-                <a class="update-activity-link" [routerLink]="" (click)="updateActivity(ac.id)">Update</a>
-                <a class="delete-activity-link" [routerLink]="" (click)="deleteActivity(ac.id)">Delete</a>
+                <a class="update-activity-link" [routerLink]="" (click)="updateActivity(ac.id)">
+                    <span class="material-icons edit">
+                        edit
+                    </span>
+                </a>
+                <a class="delete-activity-link" [routerLink]="" (click)="deleteActivity(ac.id)">
+                    <span class="material-icons delete">
+                        delete
+                    </span>
+                </a>
             </span>
         </div>
 
