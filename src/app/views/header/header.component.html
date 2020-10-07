@@ -1,0 +1,29 @@
+<header>
+    <span>
+        <a routerLink="" routerLinkActive="Active">
+            <img class="logo" src="assets/images/logo.png">
+        </a>
+    </span>
+    <h1 class="title">{{title | uppercase}}</h1>
+    <nav>
+        <span class="menu-item" *ngIf="userLoggedIn === undefined">
+            <a routerLink="/user/login" routerLinkActive="active">Login</a>
+        </span>
+        <span class="menu-item" *ngIf="userLoggedIn === undefined">
+            <a routerLink="/user/register" routerLinkActive="active">Register</a>
+        </span>
+        <span class="menu-item" *ngIf="userLoggedIn !== undefined">
+            <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        </span>
+        <span class="menu-item" *ngIf="userLoggedIn !== undefined && userLoggedIn.type == 'company'">
+            <a routerLink="/activities/admin" routerLinkActive="active">Admin</a>
+        </span>
+        <span class="menu-item" *ngIf="userLoggedIn !== undefined">
+            <a routerLink="/user/profile" routerLinkActive="active">Profile</a>
+        </span>
+        <span class="menu-item" *ngIf="userLoggedIn !== undefined">
+            <a routerLink="/user/logout" routerLinkActive="active">Logout</a>
+        </span>
+
+    </nav>
+</header>

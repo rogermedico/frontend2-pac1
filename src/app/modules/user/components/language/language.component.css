@@ -1,0 +1,56 @@
+.section-title {
+    font-size: 1.1rem;
+    text-align: left;
+    border-bottom: 1px solid darkgray;
+}
+
+.language-content {
+    margin: 15px;
+}
+
+.language-row,
+.language-header{
+    margin: 15px 0;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+.language-header {
+    border-bottom: 1px solid darkgray;
+}
+
+.language-item,
+.language-header-item {
+    display:table-cell;
+    padding: 5px 0;
+}
+
+.language-item {
+    text-align: left;
+    padding-left: 7rem;
+    font-size: 0.9rem;
+}
+
+.language-item:last-child {
+    text-align: center;
+}
+
+.update-language-link,
+.delete-language-link {
+    font-weight: 700;
+    color: rgb(2, 15, 20);
+    text-decoration: none;
+    margin: 0 15px;
+}
+    
+.update-language-link:hover,
+.delete-language-link:hover {
+    color: rgba(2, 15, 20, 0.5);
+}
+
+.language-new-button {
+    padding: 10px;
+    width: 210px;
+    margin-bottom: 50px;
+}

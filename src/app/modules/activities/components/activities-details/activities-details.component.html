@@ -1,0 +1,54 @@
+<div>
+    <h2 class="section-title">{{title}}</h2>
+    <div class="activity-content" *ngIf="activity">
+        <div class="activity-row" *ngIf="activity.name">
+            <span class="activity-tooltip">NAME:</span>
+            <span class="activity-item">{{activity.name}}</span>
+        </div>
+        <div class="activity-row" *ngIf="activity.category">
+            <span class="activity-tooltip">CATEGORY:</span>
+            <span class="activity-item">{{activity.category}}</span>
+        </div>
+        <div class="activity-row" *ngIf="activity.subcategory">
+            <span class="activity-tooltip">SUBCATEGORY:</span>
+            <span class="activity-item">{{activity.subcategory}}</span>
+        </div>
+        <div class="activity-row" *ngIf="activity.description">
+            <span class="activity-tooltip">DESCRIPTION:</span>
+            <span class="activity-item">{{activity.description}}</span>
+        </div>
+        <div class="activity-row" *ngIf="activity.language">
+            <span class="activity-tooltip">LANGUAGE:</span>
+            <span class="activity-item">{{activity.language}}</span>
+        </div>
+        <div class="activity-row" *ngIf="activity.date">
+            <span class="activity-tooltip">DATE:</span>
+            <span class="activity-item">{{activity.date}}</span>
+        </div>
+        <div class="activity-row" *ngIf="activity.price">
+            <span class="activity-tooltip">PRICE:</span>
+            <span class="activity-item">{{activity.price}}</span>
+        </div>
+        <div class="activity-row" *ngIf="activity.miniumCapacity">
+            <span class="activity-tooltip">MINIUM CAPACITY:</span>
+            <span class="activity-item">{{activity.miniumCapacity}}</span>
+        </div>
+        <div class="activity-row" *ngIf="activity.maxCapacity">
+            <span class="activity-tooltip">MAXIUM CAPACITY:</span>
+            <span class="activity-item">{{activity.maxCapacity}}</span>
+        </div>
+        <div class="activity-row" *ngIf="activity.participatingUsers">
+            <span class="activity-tooltip">PEOPLE REGISTERED:</span>
+            <span class="activity-item">{{activity.participatingUsers.length}}</span>
+        </div>
+        <div class="activity-row" *ngIf="activity.state">
+            <span class="activity-tooltip">STATUS:</span>
+            <span class="activity-item">{{activity.state}}</span>
+        </div>
+
+    </div>
+
+    <div class="no-activity-selected-tooltip" *ngIf="!activity">
+        No activity selected at the moment...
+    </div>
+</div>
