@@ -77,6 +77,31 @@ export class InMemoryDataService implements InMemoryDbService {
           level: 'A2',
           finishDate: '04/04/2044',
         }]
+      },
+      {
+        id: 4,
+        name: "joan",
+        surname: "pere",
+        type: "tourist",
+        email: "joan@uoc.edu",
+        password: "12341234",
+        loggedIn: false,
+        education: [{
+          type: 'Títol universitari',
+          level: 'Grau',
+          name: 'Grau en Turisme',
+          university: 'Universitat Rovira i Virgili',
+          finishDate: '07/10/2010'
+        }],
+        languages: [{
+          name: 'Castellà',
+          level: 'C1'
+        },
+        {
+          name: 'Anglès',
+          level: 'B2',
+          finishDate: '01/02/0003'
+        }]
       }
     ];
 

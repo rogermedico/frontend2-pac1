@@ -57,7 +57,7 @@
         </div>
         <div *ngIf="user && user.type !== 'company'" class="sign-up-button-container">
             <button *ngIf="!activity.participatingUsers.includes(user.id)" class="submit-button" type="submit"
-                (click)="signUp()">
+                (click)="signUp()" [disabled]="status != 'Available'">
                 Sign up
             </button>
             <button *ngIf="activity.participatingUsers.includes(user.id)" class="submit-button" type="submit"

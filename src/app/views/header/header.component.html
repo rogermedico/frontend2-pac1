@@ -5,6 +5,9 @@
         </a>
     </span>
     <h1 class="title">{{title | uppercase}}</h1>
+    <div *ngIf="userLoggedIn" class="login-info">Logged in as {{userLoggedIn.name}} {{userLoggedIn.surname}}
+        ({{userLoggedIn.type}})
+    </div>
     <nav>
         <span class="menu-item" *ngIf="userLoggedIn === undefined">
             <a routerLink="/user/login" routerLinkActive="active">Login</a>

@@ -17,7 +17,7 @@ export class ActivitiesDetailsComponent implements OnInit {
   public activity: Activity;
   public user: User;
   public favorite: boolean;
-  public status: String;
+  public status: string;
 
   constructor(private us: UserService, private as: ActivitiesService, private favService: ActivitiesFavoritesService, private router: Router) { }
 
