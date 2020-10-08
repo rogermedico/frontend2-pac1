@@ -5,8 +5,7 @@
         </a>
     </span>
     <h1 class="title">{{title | uppercase}}</h1>
-    <div *ngIf="userLoggedIn" class="login-info">Logged in as {{userLoggedIn.name}} {{userLoggedIn.surname}}
-        ({{userLoggedIn.type}})
+    <div *ngIf="userLoggedIn" class="login-info">Logged in as {{userLoggedIn.email}} ({{userLoggedIn.type}})
     </div>
     <nav>
         <span class="menu-item" *ngIf="userLoggedIn === undefined">
